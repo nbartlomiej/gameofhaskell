@@ -1,0 +1,36 @@
+=Game Of Haskell
+
+==About
+
+Conway's Game of Life (http://en.wikipedia.org/wiki/Conway's_Game_of_Life) implementation in Haskell, done as an excercise in Haskell BDD. Uses Hspec (https://github.com/trystan/hspec) for tests.
+
+==Usage
+
+    Running tests:
+      $ runhaskell GameOfHaskellSpecs.hs
+     
+    Running main program:
+      $ runhaskell GameOFHaskell.hs
+    
+==Development
+
+The project utilizes guard (https://github.com/guard/guard), a tool that handles filesystem events. Here it is used to automatically run tests. Suggested workflow is as follows:
+
+    1. Enter project directory
+      $ clone http://github.com/nbartlomiej/gameofhaskell; cd gameofhaskell
+     
+    2. Install guard, guard-shell
+      $ bundle install
+     
+    3. Run guard (will run tests on file change)
+      $ guard
+     
+    4. Write specs in *Specs.hs files, implement them in *.hs files
+
+==Origins
+
+This project is loosely inspired by Global Day of Coderetreat 2011 (http://coderetreat.org/). The code itself hasn't been writen during that event (obviously; participants delete all their creations), but contains many afterthoughts. Many thanks to @powczarek (http://twitter.com/powczarek) for great Haskell pair programming session.
+
+==License
+
+MIT, see LICENSE file.
