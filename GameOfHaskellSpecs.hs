@@ -21,12 +21,12 @@ specs = describe "Application" [
         it "Calculates neighbours for a single cell" (
           let expectedResults = [
                 ((-1,-1),1), ((-1,0),1), ((-1,1),1),
-                ((0,-1),1),  ((0,0),1),  ((0,1),1),
+                ((0,-1),1),              ((0,1),1),
                 ((1,-1),1),  ((1,0),1),  ((1,1),1) ]
-          in  (G.neighbours [(0,0)]) `containsAll` expectedResults
+          in  (G.livingNeighbours [(0,0)]) `containsAll` expectedResults
         ),
         it "Calculates neighbours for multiple cells" (
-          G.neighbours [(0,0),(2,2)] `containsAll` [((1,1),2)]
+          G.livingNeighbours [(0,0),(2,2)] `containsAll` [((1,1),2)]
         )
       ],
       describe "nextState" [
@@ -41,4 +41,3 @@ specs = describe "Application" [
   ]
 
 main = hspec specs
-
