@@ -29,7 +29,7 @@ The project utilizes guard (https://github.com/guard/guard), a tool that handles
 
 ==Origins
 
-This project is loosely inspired by Global Day of Coderetreat 2011 (http://coderetreat.org/). The code itself hasn't been writen during that event (obviously; participants delete all their creations), but contains many afterthoughts. Many thanks to @powczarek (http://twitter.com/powczarek) for great Haskell pair programming session.
+This project is loosely inspired by Global Day of Coderetreat 2011 (http://coderetreat.org/). The code itself hasn't been written during that event (obviously; participants delete all their creations), but contains many afterthoughts. Many thanks to @powczarek (http://twitter.com/powczarek) for great Haskell pair programming session.
 
 ==License
 
