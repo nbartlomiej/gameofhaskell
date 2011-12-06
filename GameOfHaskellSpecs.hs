@@ -4,7 +4,7 @@ import qualified GameOfHaskell as G
 import Test.Hspec
 
 containsAll :: Eq a => [a] -> [a] -> Bool
-list `containsAll` elements = all (\x->x == True) ( map (\x->x `elem` list) elements)
+list `containsAll` elements = all (`elem` list) elements
 
 specs :: Specs
 specs = describe "Application" [
