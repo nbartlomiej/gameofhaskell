@@ -1,2 +1,6 @@
-# vim temp files
+# Vim temp files
 *.swp
+
+# Useful locally, not obligatory in the repository
+.rvmrc
+Gemfile.lock
