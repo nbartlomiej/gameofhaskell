@@ -10,7 +10,7 @@ Conway's Game of Life (http://en.wikipedia.org/wiki/Conway's_Game_of_Life) imple
       $ runhaskell GameOfHaskellSpecs.hs
      
     Running main program:
-      $ runhaskell GameOFHaskell.hs
+      $ runhaskell GameOfHaskell.hs
     
 ==Development
 
