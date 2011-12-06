@@ -19,8 +19,8 @@ The project utilizes guard (https://github.com/guard/guard), a tool that handles
     1. Enter project directory
       $ clone http://github.com/nbartlomiej/gameofhaskell; cd gameofhaskell
      
-    2. Install guard, guard-shell
-      $ bundle install
+    2. Install bundler, guard, guard-shell
+      $ gem install bundler; bundle install
      
     3. Run guard (will run tests on file change)
       $ guard
