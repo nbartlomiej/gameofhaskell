@@ -17,7 +17,7 @@ nextState board =
       survivor ((x,y), neighbours) = (x,y) `elem` board && (neighbours `elem` [2,3])
   -- For every cell that has living neighbours, if the number of living
   -- neighbours suffices to be a living cell - become a living cell.
-  in  [ c | (c,n) <- (livingNeighbours board), newborn (c,n) || survivor (c,n)]
+  in  [ c | (c,n) <- livingNeighbours board, newborn (c,n) || survivor (c,n)]
 
 livingNeighbours :: Board -> [(Cell, Int)]
 livingNeighbours board =
@@ -25,7 +25,7 @@ livingNeighbours board =
                  (-1, 0),       (1, 0),
                  (-1, 1),(0, 1),(1, 1) ]
   -- List of cells that have a living neighbour. Contains duplicates.
-      allNeighbours = concat $ map (\(x,y) -> map (\(a,b) -> (x+a,y+b)) deltas ) board
+      allNeighbours = concatMap (\(x,y) -> map (\(a,b) -> (x+a,y+b)) deltas ) board
   -- Aggregated list of cells that have living neighbour(s) in format:
   -- (coordinates, neighbourCount).
   in (map (\xs@(x:_) -> (x, length xs)) . group . sort) allNeighbours 
