@@ -10,22 +10,24 @@ specs :: Specs
 specs = describe "Application" [
     describe "Integration" [
       it "Simulates Conway's Game of Life" (
+        -- Three horizontal cells.
         let board = [(-1,0),(0,0), (1,0)]
             next = G.nextState board
+        -- Three vertical cells.
             expectedResults =  [(0,1),(0,0),(0,-1)]
         in  next `containsAll` expectedResults
       )
     ],
     describe "Board" [
-      describe "neighbours" [
-        it "Calculates neighbours for a single cell" (
+      describe "livingNeighbours" [
+        it "Calculates living neighbours for a single cell" (
           let expectedResults = [
                 ((-1,-1),1), ((-1,0),1), ((-1,1),1),
                 ((0,-1),1),              ((0,1),1),
                 ((1,-1),1),  ((1,0),1),  ((1,1),1) ]
           in  (G.livingNeighbours [(0,0)]) `containsAll` expectedResults
         ),
-        it "Calculates neighbours for multiple cells" (
+        it "Calculates living neighbours for multiple cells" (
           G.livingNeighbours [(0,0),(2,2)] `containsAll` [((1,1),2)]
         )
       ],
@@ -39,5 +41,4 @@ specs = describe "Application" [
       ]
     ]
   ]
-
 main = hspec specs
